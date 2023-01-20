@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAP Change Request</title>
+<script type="text/javascript" src="ChangeRequest.js"></script>
+<link type="text/css" rel="stylesheet" href="ChangeRequest.css">
+</head>
+<body onload="init()">
+<div class="spinner" id="spinner"></div>
+<h2 style="text-align: center;">SAP Systems Transport Request</h2>
+<form action ="/SAPTransportChangeRequest" 
+      method="POST"
+      enctype="application/x-www-form-urlencoded"
+      onsubmit="return false;"
+      >
+ <input type="hidden" name="OBJECT_GUID" id="UniqueID" value=""/>
+ <input type="hidden" name="SuccessMessage" value="Request Submitted Successfully" >
+ <p>
+ <table class="form">
+  <tr class="field">
+      <td class="label">Comments</td>
+   <td><textarea rows="4" cols="100" id="Comments" name="OBJECT_Description"></textarea></td>
+  </tr>  
+  <tr class="field">
+   <td class="label">Source SID</td>
+   <td>
+     <select class="SID" type="select" name="SAPTransportChangeRequest.SourceSID" id="SourceSID" onchange="setTargetSIDs(this)">
+       <option value="">--Select Source SID--</option>
+     <!--  
+       <option value="ZO1">ZO1</option>
+     -->
+     </select>&nbsp;
+     <label>Target SIDs:</label>&nbsp;
+
+     <label id="TargetSIDLabel.1" for="TargetSID.1"></label>
+     <input class="SID" type="checkbox" id="TargetSID.CheckBox.1" tgt="1" onchange="changeTargetSID(this)" style="visibility: hidden;"/>
+
+     <label id="TargetSIDLabel.2" for="TargetSID.2"></label>
+     <input class="SID" type="checkbox" id="TargetSID.CheckBox.2" tgt="2" onchange="changeTargetSID(this)" style="visibility: hidden;" />
+     <input type="hidden" name="SAPTransportChangeRequest.TargetSIDs" id="TargetSIDs" value=""/>
+   </td>
+  </tr>
+  <tr class="field" title="SAP User ID">
+   <td class="label">Requestor's SAP User ID</td>
+   <td><input type="text" size="40" name="SAPTransportChangeRequest.Requestor" id="Requestor" /><span class="details">must exist on source SID</span></td>
+  </tr>
+  <tr><td></td><td><hr /></td></tr>
+  <tr>
+  <td></td>
+  <td>
+	  <!--    <input type="hidden" name="SAPTransportChangeRequest.CustomTransports" id="CustomTransports" value=""/> -->
+    <input type="hidden" name="SAPTransportChangeRequest.WorkbenchTransports" id="WorkbenchTransports" value="" />
+    <table class="requests" id="RequestTable">
+     <tr class="row head1">
+<!--	     <td>Customizing Transports</td> -->
+       <td>Transport Requests</td>
+     </tr>
+     <tr class="row head2">
+<!--        <td class="details">( Mention in sequence to be imported )</td>
+<td class="details">( Transport sequence not needed )</td>  -->
+     </tr>
+      <tr class="row alternate">
+	      <!--        <td class="customizing"><input class="request" type="text" section="Custom" /></td>  -->
+        <td class="workbench"><input class="request" type="text" section="Workbench" /></td>
+      </tr>
+      <tr class="row alternate">
+	      <!--        <td class="customizing"><input class="request" type="text" section="Custom" /></td>   -->
+        <td class="workbench"><input class="request" type="text" section="Workbench" /></td>
+      </tr>
+      <tr class="row alternate">
+	      <!--        <td class="customizing"><input class="request" type="text" section="Custom" /></td>   -->
+        <td class="workbench"><input class="request" type="text" section="Workbench" /></td>
+      </tr>
+      <tr class="row alternate">
+	      <!--        <td class="customizing"><input class="request" type="text" section="Custom" /></td>   -->
+        <td class="workbench"><input class="request" type="text" section="Workbench" /></td>
+      </tr>
+      <tr class="row alternate">
+	      <!--        <td class="customizing"><input class="request" type="text" section="Custom" /></td>   -->
+        <td class="workbench"><input class="request" type="text" section="Workbench" /></td>
+      </tr>
+     </table>
+   </td>
+  </tr>
+  <tr><td></td><td><button title="Add 5 more Requests" onclick="return addRequests()">Add Requests</button> <hr /></td></tr>
+  <tr>
+   <td></td>
+   <td>
+     <p class="important">Please ensure all Transports are released from the Development system and have "QC#" or "CHG#" in the description of the Transport.</p>
+     <p>
+     <input class="button" type="button" onclick="submitRequest(this, '')" value="Submit" />
+     </p>
+     <p class="important">This request will be submitted and an email will be sent to the Requestor and Basis team.</p>
+     </td>
+   </tr>
+ </table>
+</form>
+</body>
+</html>
