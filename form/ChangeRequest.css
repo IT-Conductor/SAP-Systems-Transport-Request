@@ -1,0 +1,359 @@
+  body
+  {
+   background-color: #eee;
+   font-family: "Segoe UI",Arial,sans-serif;
+   margin: 1em;
+  }
+  table.form
+  {
+    border-style: none;
+  }
+  table.requests
+  {
+  }
+  tr.head1,
+  tr.head2
+  {
+     text-align: center;
+  }
+  tr.head1
+  {
+    font-size:   medium;
+    font-weight: bold;
+  }
+  td.label
+  {
+    white-space:    nowrap;
+    vertical-align: top;
+    text-align:     right;
+    padding-right:  1ex;
+  }
+  input.request
+  {
+    width: 20em;
+  }
+  .details
+  {
+    padding-left:    5px;
+    font-size:  small;
+    font-style: italic;
+    font-weight: normal;
+  }
+  .important
+  {
+    font-size: medium;
+    font-weight: bold;
+  }
+  .SID
+  {
+    font-size: small;
+  }
+  input.button
+  {
+    font-size:   small;
+    font-weight: bold;
+  }
+  td.customizing
+  {
+    padding-right: 1em;
+  }
+  td.workbench
+  {
+  }
+/***************
+ * Popup Menu  *
+ ***************/
+div.popup
+{
+  visibility:         hidden;
+  position:           relative;
+  background-color:   #eee;
+  background:         linear-gradient(to bottom right, #eee, white);
+  border-style:       none; /*       thin threedhighlight outset; */
+  box-shadow:         0px 2px 4px 2px rgba(0, 10, 5, 0.2);
+  border-radius:      10px;
+  width:              auto;
+  left:               50%;
+  top:                50%;
+  transform:          translate(-50%, -50%);
+}
+div.popup:after
+{
+  content:          "";
+  display:          block;
+  height:           0;
+  margin:           0;
+  padding:          0;
+  clear:            both;
+  visibility:       hidden;
+  border-width:     0;
+  border-style:     none;
+  font-size:        0;
+  zoom:             1;
+}
+div.popup ax
+{
+   color:             blue;
+}
+table.popup-window
+{
+  background-color: #eee;
+  border:           thin threedhighlight outset;
+  width:            auto;
+  height:           auto;
+}
+div.popup-window
+{
+  background-color:      #eee;
+  border:                thin threedhighlight outset;
+  border-radius:         7px;
+}
+.popup-window tr
+{
+  height:           auto;
+}
+td.popup-decoration
+{
+  background-color: #b5d5ff;
+  border-style:     none;
+  vertical-align:   middle;
+  height:           1em;
+  width:            100%;
+}
+div.popup-decoration
+{
+  display:          block;
+  position:         relative;
+  background-color: #b5d5ff;
+  border-style:     none;
+  vertical-align:   middle;
+  /*
+  height:           1.5em;
+  */
+  padding:          5px;
+  /*
+  margin:           2px;
+  */
+  border-radius:    5px 5px 0 0;
+  white-space:      nowrap;
+  overflow:         hidden;
+}
+td.popup-decoration table
+{
+  height:           10px;
+  /*
+  width:            100%;
+  */
+  padding:          2px;
+}
+td.popup-title
+{
+  font-weight:      normal;
+  color:            black;
+  text-align:       left;
+  vertical-align:   middle;
+  width:            100%;
+}
+td.popup-ctrl
+{
+  text-align:       right;
+  vertical-align:   middle;
+}
+div.popup-title
+{
+  position:         relative;
+  display:          inline !important;
+  float:            left;
+  font-weight:      bolder;
+  color:            black;
+  vertical-align:   middle;
+  padding-right:    1em;
+  white-space:      nowrap;
+}
+div.popup-title img
+{
+  width:            1em;
+  vertical-align:   middle;
+  padding-right:    2px;
+}
+div.popup-ctrl
+{
+  display:             inline !important;
+  float:               right;
+  vertical-align:      middle;
+  padding-left:        5px;
+  font-size:           18px;
+  line-height:         1;
+  color:               gray;
+  text-rendering:      optimizeLegibility;
+}
+.popup-ctrl img
+{
+  /*
+  background-color: #eee;
+  border:           thin threedhighlight outset;
+  */
+  width:            1em;
+  height:           1em;
+  padding:          0 2px;
+}
+td.popup-body
+{
+  text-align:       left;
+  /*
+  width:             100%;
+  */
+}
+div.popup-body
+{
+  position:         relative;
+  display:          block;
+  overflow:         auto;
+  margin:           1em;
+  /*
+  padding-bottom:   1em;
+  background-color: white;
+  */
+}
+.popup-body hr
+{
+  width:            100%;
+}
+div.popup-buttons
+{
+  position:         relative;
+  text-align:       center;
+  overflow:         hidden;
+  padding:          0;
+  margin:           0;
+}
+a.popup-resize
+{
+  text-align:       right;
+  width:            1em;
+  height:           1em;
+}
+a.popup-resize img
+{
+  text-align:       right;
+  WIDTH:            1em;
+  HEIGHT:           1em;
+  BORDER-STYLE:     none;
+}
+li.control
+{
+    display:          inline;
+    position:         relative;
+    border-style:     none;
+    /*
+    float:            left;
+    vertical-align:   middle;
+    text-align:       center;
+    line-height:      1em;
+    */
+}
+.control input
+{
+    vertical-align:   middle;
+}
+.control-shift-field input[type=text]
+{
+    width:            12em;
+}
+.control img, input[type=image]
+{
+    vertical-align:   middle;
+    WIDTH:            1em;
+    HEIGHT:           1em;
+    BORDER-STYLE:     none;
+    cursor:           pointer;
+    user-select:      none;
+}
+img.control
+{
+    vertical-align:   middle;
+    WIDTH:            1em;
+    HEIGHT:           1em;
+    BORDER-STYLE:     none;
+    cursor:           pointer;
+    user-select:      none;
+}
+span.control
+{
+    vertical-align:   middle;
+    width:            1em;
+    height:           1em;
+    border-style:     none;
+    padding:          0;
+}
+input[type=image].control
+{
+  vertical-align:   middle;
+  WIDTH:            1em;
+  HEIGHT:           1em;
+  BORDER-STYLE:     none;
+  cursor:           pointer;
+  user-select:      none;
+}
+.control-close:after
+{
+  content: '\2715';
+}
+.control-collapse:after
+{
+  content: '\2500';
+}
+.control-expand:after
+{
+  content: '\25FB'; /*'\2335'; */
+}
+.control-reload:after
+{
+  content: '\27F3';
+}
+
+div.spinner
+{
+  display:            none;
+  z-index:            10000;
+  position:           absolute;
+  /*
+  left:               calc(50vw - 3em);
+  top:                calc(50vh - 3em);
+  */
+  width:              4em;
+  height:             4em;
+  
+  left:               50%;
+  top:                50%;
+  transform:          translate(-50%, -50%);  
+
+  border-radius:      50%;
+  border-width:       1em;
+  border-style:       solid;
+
+  border-top-color:   #3498db;
+  border-left-color:  #ccc;
+  border-bottom-color:#ccc;
+  border-right-color: #ccc;
+
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+/* IE */
+@-ms-keyframes spin {
+  0% { -ms-transform: rotate(0deg); }
+  100% { -ms-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
